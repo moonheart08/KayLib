@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net472</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <LangVersion>10</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Reference Include="BaseX">
+        <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\NeosVR\BaseX.dll</HintPath>
+      </Reference>
+      <Reference Include="FrooxEngine">
+        <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\NeosVR\Neos_Data\Managed\FrooxEngine.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+</Project>
