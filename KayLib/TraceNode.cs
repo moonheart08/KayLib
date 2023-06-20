@@ -13,6 +13,7 @@ namespace KayLib;
 public sealed class TraceNode : LogixNode
 {
     public readonly SyncRef<Text> Text;
+    public readonly Impulse? Out;
     
     protected override string Label => null!;
     
@@ -26,7 +27,7 @@ public sealed class TraceNode : LogixNode
         Text.Target.AutoSize = false;
         Text.Target.Size.Value = 16.0f;
     }
-    
+
     [ImpulseTarget]
     public void DoTrace()
     {
@@ -60,5 +61,7 @@ public sealed class TraceNode : LogixNode
         }
 
         Text.Target.Content.Value = builder.ToString();
+        
+        Out?.Trigger();
     }
 }
