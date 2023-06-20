@@ -9,10 +9,10 @@ using JetBrains.Annotations;
 
 namespace KayLib;
 
-[NodeName("Trace")]
+[NodeName("Backtrace")]
 [Category("LogiX/Kay")]
 [PublicAPI]
-public sealed class TraceNode : LogixNode
+public sealed class BacktraceNode : LogixNode
 {
     public readonly SyncRef<Text> Text;
     public readonly Impulse? Out;
@@ -21,7 +21,7 @@ public sealed class TraceNode : LogixNode
     
     protected override void OnGenerateVisual(Slot root)
     {
-        var ui = GenerateUI(root, 192f, 128f);
+        var ui = GenerateUI(root, 192f, 256f);
         ui.VerticalLayout(4f);
         ui.Style.MinHeight = 32f;
         var localeString = (LocaleString) "No Trace";
