@@ -21,7 +21,6 @@ public sealed class TraceNode : LogixNode
         var ui = GenerateUI(root, 192f, 128f);
         ui.VerticalLayout(4f);
         ui.Style.MinHeight = 32f;
-        UniLog.Log($"Making visual for {root.World}, slot is in {Text.World}");
         var localeString = (LocaleString) "No Trace";
         Text.Target = ui.Text(in localeString, alignment: Alignment.TopLeft);
         Text.Target.AutoSize = false;
@@ -32,10 +31,7 @@ public sealed class TraceNode : LogixNode
     public void DoTrace()
     {
         if (Text.Target == null)
-        {
-            UniLog.Log("Missing target for trace!");
             return;
-        }
 
         var trace = new StackTrace();
         var relevant = trace.GetFrames()
