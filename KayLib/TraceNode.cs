@@ -5,11 +5,13 @@ using BaseX;
 using FrooxEngine;
 using FrooxEngine.LogiX;
 using FrooxEngine.UIX;
+using JetBrains.Annotations;
 
 namespace KayLib;
 
 [NodeName("Trace")]
 [Category("LogiX/Kay")]
+[PublicAPI]
 public sealed class TraceNode : LogixNode
 {
     public readonly SyncRef<Text> Text;
