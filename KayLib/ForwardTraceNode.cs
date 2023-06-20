@@ -84,10 +84,10 @@ public sealed class ForwardTraceNode : LogixNode
             
             Delegate d = () =>
             {
-                Instrument(oldTargetNode, trace);
+                var rd = Instrument(oldTargetNode, trace);
                 trace.AddEntry(oldTargetNode);
                 oldTarget();
-                DeInstrument(oldTargetNode, recoveryData);
+                DeInstrument(oldTargetNode, rd);
             };
            
             // This is just awful. Please never do this.
